@@ -3,12 +3,11 @@
 ##usage\
 Calculating gravitational potential of a 2D surface density map using Fast Fourier method (FFT)\
 
-Parameters: data: Surface density array in unit of g/cm^2\
-            dx  : Array pixel length in unit of cm\
-            dy  : Array pixel width in unit of cm\
-            H   : Half-thickness of density layer in unit of cm\
-
-Returns:    phi : Gravitational potential array of the surface density\
+Parameters:&emsp;data:Surface density array in unit of g/cm^2\
+&emsp;&emsp;&emsp;dx  : Array pixel length in unit of cm\
+&emsp;&emsp;&emsp;dy  : Array pixel width in unit of cm\
+&emsp;&emsp;&emsp;H   : Half-thickness of density layer in unit of cm\
+Returns:&emsp;phi : Gravitational potential array of the surface density
 
 ##how to run
 '''
