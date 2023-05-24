@@ -1,6 +1,4 @@
 import numpy as np
-from astropy.io import fits
-import sys
 
 
 def phi_2d(data, dx=1, dy=1, H=0):
@@ -50,6 +48,9 @@ def phi_2d(data, dx=1, dy=1, H=0):
     return phi
 
 if __name__ == "__main__":
+    from astropy.io import fits
+    import sys
+
     fname = sys.argv[1]
     hdu = fits.open(fname)
     data = hdu[0].data
