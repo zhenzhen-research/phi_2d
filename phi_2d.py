@@ -54,8 +54,9 @@ if __name__ == "__main__":
     fname = sys.argv[1]
     hdu = fits.open(fname)
     data = hdu[0].data
+    data = np.nan_to_num(data)
 
     phi = phi_2d(data, 0.5e17, 0.5e17, 0)
 
     f = fits.PrimaryHDU(phi)
-    f.writeto(sys.argv[1].replace('.fits', '') + '.phi2d.fits', overwrite=True)
+    f.writeto(sys.argv[1].replace('.fits', '.phi2d.fits'), overwrite=True)
