@@ -29,7 +29,7 @@ if __name__ == "__main__":
     hdu = fits.open(fname)
     phi_2d = hdu[0].data
 
-    acc = acc(phi_2d, 3.3e17)
+    acc = acc(phi_2d, 0.5e17)
 
     fits.writeto(sys.argv[1].replace('.fits', '.acc.fits'), acc, overwrite=True)
 
