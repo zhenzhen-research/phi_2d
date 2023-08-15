@@ -1,6 +1,5 @@
 import numpy as np
 
-
 def phi_2d(data, dx=1, dy=1, H=0):
     '''
     Calculating gravitational potential of a 2D surface density map using Fast Fourier method (FFT)
@@ -20,7 +19,7 @@ def phi_2d(data, dx=1, dy=1, H=0):
     #Padding for periodic boundary condition
     ny, nx = data.shape[0]*2, data.shape[1]*2 
     sigma = np.zeros((ny, nx))
-    sigma[0:data.shape[0], 0:data.shape[1]] = data
+    sigma[0:data.shape[0], 0:data.shape[1]] = np.nan_to_num(data)
 
     sigma_k = np.fft.fft2(sigma)
 
@@ -54,7 +53,6 @@ if __name__ == "__main__":
     fname = sys.argv[1]
     hdu = fits.open(fname)
     data = hdu[0].data
-    data = np.nan_to_num(data)
 
     phi = phi_2d(data, 0.5e17, 0.5e17, 0)
 
